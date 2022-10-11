@@ -7,6 +7,11 @@ from datetime import datetime
 from time import sleep
 import os
 
+if __name__ == '__main__':
+    port = int(os.getenv('PORT'), '5000')
+    app.run(host='0.0.0.0', port = port)
+
+# app = Flask(__name__, template_folder='tempalte', static_folder='tempalte/assets')
 app = Flask(__name__)
 
 @app.route("/")
