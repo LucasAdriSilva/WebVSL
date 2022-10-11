@@ -57,7 +57,7 @@ def autenticar():
         apresentacao.save("VSL.pptx")
 
 
-
+        
         os.rename('VSL.pptx', 'static\VSL.pptx')
         
     
