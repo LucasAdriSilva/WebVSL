@@ -31,7 +31,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="/conversor.html">Conversor</a>
+                                <a class="nav-link text-white" href="/convert">Conversor</a>
                             </li>
 
                         </ul>
@@ -53,16 +53,46 @@
         </header>
 
         <main class="main">
-             <div class="row d-flex flex-column">
-                <h1>Clique aqui para começar o download</h1>
-                <a href="../static/VSL.pptx" download="copy.pptx" class="text-center fs-1">VSL.pptx</a>
-             </div>
-            
+                <div class="row">
+                    <div class="col-12 d-flex flex-column align-items-center">
+                        <h1 class="fw-bolder">CONVERSOR DE VSL</h1>
+                        <h6 class="fw-normal">Cole sua copy no espaço abaixo para gerar slides de Power Point   para sua VSL.</h6>
+<h6 class="fw-normal">Configuração padrão: fonte Arial, tamanho 40.</h6>
+                    </div>
+                    <div class="col-12">
+                       
+                    </div>
+                    <div class="col-12 d-flex justify-content-center mt-3">
+                        <form action="/autenticar">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <textarea
+                                        type="text"
+                                        style="margin-left: 50px; resize: none; background-color: #ebebeb; border: none"
+                                        name="vsl"
+                                        id="text"
+                                        cols="120"
+                                        rows="15">
+                                    </textarea>
+                                </div>
+                                <div class="col-2 d-flex flex-column justify-content-center mt-3">
+                                    <button
+                                        type="submit" 
+                                        class="btn btn-lg text-white fw-bolder" 
+                                        style="background-color: rgb(255,93,94)"
+                                    >
+                                        CONVERTER!
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
         </main>
 
         <footer class="container fixed-bottom d-flex" >
 
-            <p>&copy;2022 - Agência MKT+</p>
+            <p>&copy;2022 - Agência MKT+ </p>
             <!-- <p class="ms-5">Contatos: +55(19) 99554-8058</p> -->
           </footer>
         </body>
@@ -73,23 +103,13 @@
     </html>
 
     <style>
-        main{
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+        .main{
+            margin-top: 62px;
+            padding-top: 40px;
         } 
         body{
             overflow: hidden;
         }   
-        .h1{
-            font-size: 4rem;
-        }
-        .h6{
-            font-size: 1.2rem;
-        }
 
     </style>
 

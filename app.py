@@ -5,7 +5,7 @@ from pptx.util import Inches, Pt
 from pptx.enum.text import PP_ALIGN ,MSO_ANCHOR
 from datetime import datetime
 from time import sleep
-import os
+import shutil
 
 app = Flask(__name__)
 
@@ -16,8 +16,12 @@ app = Flask(__name__)
 # app = Flask(__name__, template_folder='tempalte', static_folder='tempalte/assets')
 
 @app.route("/")
-def homepage():
-    return render_template("homepage.html")
+def index():
+    return render_template("principal.html")
+
+@app.route("/convert")
+def conversor():
+    return render_template("conversor.html")
 
 @app.route('/autenticar', methods=['GET'])
 def autenticar():
@@ -32,18 +36,22 @@ def autenticar():
     try:
         #Abrindo PowerPoint
         apresentacao = Presentation()
+        apresentacao.slide_width = Inches(16)
+        apresentacao.slide_height = Inches(9)
 
         # Cada linah do arquivo.txt ira fazer esse bloco
         for line in x:
 
             #Criando um slide
             slide = apresentacao.slides.add_slide(apresentacao.slide_layouts[6])
+            
 
             #Criando e centralizando a TextBox
-            x = Inches(1)
-            y = Inches(3)
-            largura = Inches(8)
-            altura = Inches(1)
+            x = Inches(3)
+            y = Inches(3.5)
+            largura = Inches(10)
+            altura = Inches(2)
+            caixa_texto = slide.shapes.add_textbox(x, y, largura, altura)
             caixa_texto = slide.shapes.add_textbox(x, y, largura, altura)
 
             #Formatando o TextBox
@@ -52,20 +60,12 @@ def autenticar():
             caixa_texto.text_frame.paragraphs[0].font.size = Pt(40)
             caixa_texto.text_frame.paragraphs[0].font.name = "Arial"
             caixa_texto.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
-
-
-         #Salvando o arquivo pptx
-        apresentacao.save("VSL.pptx")
-
-
-        
-        os.rename('VSL.pptx', 'static\VSL.pptx')
-        
-    
-
+        #Salvando o arquivo pptx
+        apresentacao.save("VSL.pptx")  
+        #Alterando o arquivo par a pasta static
+        shutil.move('VSL.pptx', 'static/VSL.pptx')
     except Exception as e:
         print(e)
-
 
     return render_template("resultado.html")
 
@@ -73,7 +73,7 @@ def autenticar():
 
 if __name__ == "__main__":
     # app.run(debug=True)
-    app.run()
+    app.run(debug=True)
 
 
 

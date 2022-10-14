@@ -31,7 +31,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="/conversor.html">Conversor</a>
+                                <a class="nav-link text-white" href="/convert">Conversor</a>
                             </li>
 
                         </ul>
@@ -53,10 +53,23 @@
         </header>
 
         <main class="main">
-             <div class="row d-flex flex-column">
-                <h1>Clique aqui para começar o download</h1>
-                <a href="../static/VSL.pptx" download="copy.pptx" class="text-center fs-1">VSL.pptx</a>
-             </div>
+             <div class="row">
+                <div class="col-6 d-flex flex-column align-items-start justify-content-center px-5">
+                    <h1 class="fw-bolder h1 text-start">CONVERSOR DE VSL</h1>
+                    <h6 class="fw-normal h6 text-start mt-4">Utilize nosso conversor automático e otimize seu tempo na criação da sua VSL, de forma rápida e segura.</h6>
+                    <h6 class="fw-normal h6 text-start">Assista o vídeo ao lado para saber como funciona.</h6>
+                    <button 
+                        onclick="window.location.href = '/convert'"
+                        class="btn btn-lg text-white fw-bolder mt-4 px-4 py-3" 
+                        style="background-color: rgb(255,93,94)"
+                    >
+                        IR PARA O CONVERSOR
+                    </button>
+                </div>
+                <div class="col-6">
+                    <iframe width="570" height="325" src="https://www.youtube.com/embed/_YeN69XoqqU" title="Tutorial" frameborder="2" allow="accelerometer; picture-in-picture" allowfullscreen></iframe>
+                </div>
+             </div>  
             
         </main>
 
@@ -74,6 +87,9 @@
 
     <style>
         main{
+            /* margin-top: 62px; */
+            /* position:relative;
+            top: 50%; */
             width: 100vw;
             height: 100vh;
             display: flex;

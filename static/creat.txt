@@ -1,1 +1,0 @@
-Arquivo apenas para criar o diretório do static
