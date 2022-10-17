@@ -9,11 +9,6 @@ import shutil
 from waitress import serve
 
 app = Flask(__name__)
-
-# if __name__ == '__main__':
-#     port = int(os.getenv('PORT'), '5000')
-#     app.run(host='0.0.0.0', port = port)
-
 # app = Flask(__name__, template_folder='tempalte', static_folder='tempalte/assets')
 
 @app.route("/")
@@ -30,9 +25,16 @@ def autenticar():
     vsl = vsl.split('\n')
     x = []
 
+    #Faz o tratamento da string enviada pelo front
+    #Add em um array e se estiver espaço vazio é excluido automaticamente
     for item in vsl:
         st = item.replace('\r', '')
-        x.append(st)
+
+        if st.find('+'):
+            st = st.replace('+', '')
+            st = st.strip()
+            if st != '':
+                x.append(st)     
 
     try:
         #Abrindo PowerPoint
@@ -40,7 +42,7 @@ def autenticar():
         apresentacao.slide_width = Inches(16)
         apresentacao.slide_height = Inches(9)
 
-        # Cada linah do arquivo.txt ira fazer esse bloco
+        # Cada item no array ira fazer esse bloco
         for line in x:
 
             #Criando um slide
@@ -61,10 +63,13 @@ def autenticar():
             caixa_texto.text_frame.paragraphs[0].font.size = Pt(40)
             caixa_texto.text_frame.paragraphs[0].font.name = "Arial"
             caixa_texto.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+            caixa_texto.text_frame.word_wrap = True
+
         #Salvando o arquivo pptx
         apresentacao.save("VSL.pptx")  
         #Alterando o arquivo par a pasta static
         shutil.move('VSL.pptx', 'static/VSL.pptx')
+
     except Exception as e:
         print(e)
 
@@ -73,8 +78,7 @@ def autenticar():
 
 
 # if __name__ == "__main__":
-#     # app.run(debug=True)
-#     app.run()
+#     app.run(debug=True)
 
 serve(app, host="0.0.0.0", port=8080)
 
