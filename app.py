@@ -6,6 +6,7 @@ from pptx.enum.text import PP_ALIGN ,MSO_ANCHOR
 from datetime import datetime
 from time import sleep
 import shutil
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -71,12 +72,11 @@ def autenticar():
 
 
 
-if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     # app.run(debug=True)
+#     app.run()
 
-
-
+serve(app, host="0.0.0.0", port=8080)
 
 
 
