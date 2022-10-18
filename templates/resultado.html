@@ -15,15 +15,25 @@
     <body>
 
         <header>
-            <nav class="navbar navbar-expand-md navbar fixed-top "
+            <nav class="navbar navbar-expand-sm "
                 style="background-color: RGB(181,41,133)">
                 <div class="container-fluid">
-                    <p class="navbar-brand my-0 mx-5 text-white fw-bold fs-4"
-                        href="">Conversor</p>
 
-                    <div class=" navbar-collapse"
-                        id="navbarCollapse">
-                        <ul class="navbar-nav me-auto ">
+                    <a class="navbar-brand text-white" href="#">Agencia MKT+</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+
+                        <ul class="navbar-nav">
 
                             <li class="nav-item">
                                 <a class="nav-link text-white"
@@ -35,60 +45,46 @@
                             </li>
 
                         </ul>
-                        <div class="col-4 d-flex justify-content-end">
-                            <svg
-                                class="bd-placeholder-img rounded-circle me-5"
-                                width="40"
-                                height="40"
-                                role="img"
-                                preserveAspectRatio="xMidYMid slice"
-                                focusable="false">
-                                <rect width="100%" height="100%"
-                                    fill="#FFF"/>
-                                </svg>
-                            </div>
-                        </div>
                     </div>
-                </nav>
+                </div>
+            </nav>
         </header>
 
-        <main class="main">
-             <div class="row d-flex flex-column">
-                <h1>Clique aqui para começar o download</h1>
-                <a href="../static/VSL.pptx" download="copy.pptx" class="text-center fs-1">VSL.pptx</a>
-             </div>
-            
+        <main class="main mt-5 mt-sm-5 mt-md-5">
+            <div class="row
+                d-flex
+                flex-column
+                justify-content-center align-content-center
+
+                ">
+                <h1 class="text-center ">Clique aqui para começar o download</h1>
+                <a href="../static/VSL.pptx" download="copy.pptx"
+                    class="text-center fs-1">VSL.pptx</a>
+            </div>
+
         </main>
 
-        <footer class="container fixed-bottom d-flex m-0 p-0 ps-5" >
+        <footer class="position-absolute bottom-0 start-0 ps-5">
             <p>&copy;2022 - Agência MKT+</p>
         </footer>
-        
-        </body>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-            crossorigin="anonymous"></script>
-    </html>
 
-    <style>
-        main{
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        } 
+    </body>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</html>
+
+<style>
         body{
-            overflow: hidden;
-        }   
-        .h1{
-            font-size: 4rem;
-        }
-        .h6{
-            font-size: 1.2rem;
-        }
+        overflow: hidden;   
+    }
+    main{
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;    
+    } 
 
     </style>
-

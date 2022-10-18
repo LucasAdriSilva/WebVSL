@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS only -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -15,7 +14,7 @@
     <body>
 
         <header>
-            <nav class="navbar navbar-expand-md navbar fixed-top "
+            <!-- <nav class="navbar navbar-expand-md navbar fixed-top "
                 style="background-color: RGB(181,41,133)">
                 <div class="container-fluid">
                     <p class="navbar-brand my-0 mx-5 text-white fw-bold fs-4"
@@ -49,59 +48,115 @@
                             </div>
                         </div>
                     </div>
-                </nav>
+                </nav> -->
+            <nav class="navbar navbar-expand-sm "
+                style="background-color: RGB(181,41,133)">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand text-white" href="#">Agencia MKT+</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white"
+                                    aria-current="page" href="/">Principal</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/convert">Conversor</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
         </header>
 
-        <main class="main">
-             <div class="row">
-                <div class="col-6 d-flex flex-column align-items-start justify-content-center px-5">
-                    <h1 class="fw-bolder h1 text-start">CONVERSOR DE VSL</h1>
-                    <h6 class="fw-normal h6 text-start mt-4">Utilize nosso conversor automático e otimize seu tempo na criação da sua VSL, de forma rápida e segura.</h6>
-                    <h6 class="fw-normal h6 text-start">Assista o vídeo ao lado para saber como funciona.</h6>
-                    <button 
-                        onclick="window.location.href = '/convert'"
-                        class="btn btn-lg text-white fw-bolder mt-4 px-4 py-3" 
-                        style="background-color: rgb(255,93,94)"
-                    >
-                        IR PARA O CONVERSOR
+        <main class="main 
+            d-md-flex d-lg-flex
+            flex-md-row flex-lg-row
+            mt-5 mt-sm-5 mt-md-0"
+        >
+            <div class="row ">
+                <div class="d-flex flex-column
+                    col-xs-12 col-sm-12 col-md-6
+                    align-content-sm-center align-content-xs-center align-content-md-start align-content-lg-start
+                    align-items-center align-items-sm-center
+                    align-items-md-start
+                    justify-content-center
+                    px-5
+                    mt-n5 mt-sm-n5 mt-md-n5 mt-lg-0"
+                >
+                    <h1 class="fw-bolder">CONVERSOR DE VSL</h1>
+                    <h6 class="fw-normal text-center text-sm-cnter text-md-start mt-4">Utilize nosso
+                        conversor automático e otimize seu tempo na criação da
+                        sua VSL, de forma rápida e segura.</h6>
+                    <h6 class="fw-normal h6">Assista o vídeo para saber como funciona.</h6>
+                    <button
+                        onclick="window.location.href= '/convert'"
+                        class="btn btn-lg text-white fw-bolder mt-2 px-4 py-3"
+                        style="background-color: rgb(255,93,94)">
+
+                        <h6 class="m-0 p-0">IR PARA O CONVERSOR</h6>
                     </button>
                 </div>
-                <div class="col-6">
-                    <iframe width="570" height="325" src="https://www.youtube.com/embed/_YeN69XoqqU" title="Tutorial" frameborder="2" allow="accelerometer; picture-in-picture" allowfullscreen></iframe>
+                <div
+                    style="height: 300px;" 
+                    class="d-flex col-xs-12 col-sm-12 col-md-6
+                    mt-2 mt-sm-2 mt-md-0 mt-lg-0
+                    mb-5 mb-sm-5 mb-md-0 mb-lg-0
+                    justify-content-center">
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        src="https://www.youtube.com/embed/_YeN69XoqqU"
+                        title="Tutorial"
+                        frameborder="2"
+                        allow="accelerometer; picture-in-picture"
+                        allowfullscreen
+                        class="
+                        px-5 px-sm-5 px-md-0 px-ld-0"
+                    >
+                    </iframe>
                 </div>
-             </div>  
-            
+            </div>
+
         </main>
 
-        <footer class="container fixed-bottom d-flex m-0 p-0 ps-5" >
+        <footer class="position-absolute bottom-0 start-0 ps-5">
             <p>&copy;2022 - Agência MKT+</p>
         </footer>
 
-        </body>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-            crossorigin="anonymous"></script>
-    </html>
+    </body>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</html>
 
-    <style>
-        main{
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        } 
-        body{
-            overflow: hidden;
-        }   
-        .h1{
-            font-size: 4rem;
-        }
-        .h6{
-            font-size: 1.2rem;
-        }
-
-    </style>
-
+<style>
+    body{
+        overflow: hidden;   
+    }
+    main{
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;    
+    }   
+</style>
