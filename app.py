@@ -151,9 +151,6 @@ def togglePassword():
           return render_template("login.html", msg= 'Senha alterada com sucesso')
         else:
           return render_template("togglePassword.html", msgFalse= 'As senhas não são iguais, por favor verificar')
-
-        
-        
         if user.password == passs:
           return "Mesma senha, comfirmada"
         else:
