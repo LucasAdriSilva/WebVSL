@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous">
+
+        <title>Criador de VSL</title>
+    </head>
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-sm "
+                style="background-color: RGB(181,41,133)">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand text-white" href="#">Agencia MKT+</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white"
+                                    aria-current="page" href="/">Principal</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/convert">Conversor</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/togglePassword">Alterar Senha</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main
+            d-md-flex d-lg-flex
+            flex-md-row flex-lg-row
+            mt-5 mt-sm-5 mt-md-0">
+            <div class="row m-3 d-flex flex-column align-items-center">
+                <div class="col-12 ">
+                    {% if msg %}
+                    <div id="msg_valided" class="alert alert-success"
+                        role="alert">
+                        {{msg}}
+                    </div>
+                    {% endif %}
+
+
+                    <h1 class="text-center">Entrar</h1>
+                    <p class="fw-lighter text-center">Faça o login para liberar
+                        a converção das sua Copy em sua VSL, facilitando a
+                        crição do seu video polpando tempo.</p>
+                </div>
+
+                <div class="col-8 text-center">
+                    <form action="/login" method="POST" class="needs-validation"
+                        novalidate>
+
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div id="msg_valided" class="alert alert-danger"
+                            role="alert">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+
+
+                        <input
+                            type="text"
+                            name=usuario
+                            id="login"
+                            class="form-control mb-1"
+                            placeholder="Login"
+                            required
+                            autofocus>
+                        <div class="invalid-feedback text-start">
+                            Por favor, digite seu login.
+                        </div>
+                        <input
+                            type="password"
+                            name=senha
+                            id="senha"
+                            class="form-control"
+                            placeholder="Senha"
+                            required>
+                        <div class="invalid-feedback text-start">
+                            Por favor, digite sua senha.
+                        </div>
+
+
+
+
+
+                        <!-- Resolução para PC alterando tamanho do botão -->
+                        <div class="d-flex flex-column align-items-center ">
+                            <button
+                                class="w-50 btn btn-outline mt-2 d-none
+                                d-sm-block d-md-block text-center"
+                                type="submit">
+                                Entrar
+                            </button>
+                            <button
+                                class="w-50 btn btn mt-2 btn-simple d-none
+                                d-sm-block d-md-block"
+                                onclick="window.location.href= '/register'">
+                                Cadastre-se
+                            </button>
+                        </div>
+
+                        <!-- Resolução para Mobile alterando tamanho do botão -->
+                        <button
+                            class="w-75 btn btn-outline mt-2 d-sm-none d-md-none
+                            "
+                            type="submit">
+                            Entrar
+                        </button>
+                        <button
+                            class="w-75 btn btn mt-2 btn-simple d-sm-none
+                            d-md-none "
+                            onclick="window.location.href= '/register'">
+                            Cadastre-se
+
+                        </button>
+
+
+                        <div class="col-12">
+                            <a href="/reset">Esqueci minha senha</a>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer class="position-absolute bottom-0 start-0 ps-5">
+            <p>&copy;2022 - Agência MKT+</p>
+        </footer>
+    </body>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous">
+    </script>
+    <script>
+        // VALIDAÇÂO FORM
+        (function() {
+              'use strict';
+              window.addEventListener('load', function() {
+                // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
+                var forms = document.getElementsByClassName('needs-validation');
+                // Faz um loop neles e evita o envio
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                  form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              }, false);
+            })();
+
+
+        //TEMPO DE MSG
+        setTimeout(function () {
+        document.getElementById("msg_valided").style.display = "none";
+        }, 3000);
+    </script>
+</html>
+
+<style>
+    body{
+        overflow: hidden;   
+    }
+    a{
+        text-decoration: none;
+        color: rgb(49, 49, 49);
+        font-size: 0.8rem;
+    }
+    main{
+        padding-bottom: 450px !important;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;    
+    }  
+    .btn-simple{
+        background-color: rgb(255,93,94); 
+        color: white;
+        transition: 0.5s;
+        font-size: 14px;
+        flex-wrap: none;
+    }
+    .btn-simple:hover{
+        background-color: white; 
+        color:  rgb(255,93,94);
+        border-color: rgb(255,93,94);
+        font-size: 16px;
+        transition: 0.5s;
+    }
+    .btn-outline {
+        border: 1px solid rgb(255,93,94);
+        font-size: 14px;
+        color: rgb(255,93,94);
+        transition: 1s;
+    }
+    .btn-outline:hover {
+        background-color: rgb(255,93,94); 
+        color:  white;
+        border-color: rgb(255,93,94);
+        font-size: 16px;
+        transition: 1s;
+    }
+    
+</style>
