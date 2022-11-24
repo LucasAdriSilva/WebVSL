@@ -1,167 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-            crossorigin="anonymous">
-        <title>Criador de VSL</title>
-    </head>
-    <body>
 
-        <header>
-            <!-- <nav class="navbar navbar-expand-md navbar fixed-top "
-                style="background-color: RGB(181,41,133)">
-                <div class="container-fluid">
-                    <p class="navbar-brand my-0 mx-5 text-white fw-bold fs-4"
-                        href="#">Conversor</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                    <div class=" navbar-collapse"
-                        id="navbarCollapse">
-                        <ul class="navbar-nav me-auto ">
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white"
-                                    aria-current="page" href="/">Principal</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/convert">Conversor</a>
-                            </li>
-
-                        </ul>
-                        <div class="col-4 d-flex justify-content-end">
-                            <svg
-                                class="bd-placeholder-img rounded-circle me-5"
-                                width="40"
-                                height="40"
-                                role="img"
-                                preserveAspectRatio="xMidYMid slice"
-                                focusable="false">
-                                <rect width="100%" height="100%"
-                                    fill="#FFF"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </nav> -->
-            <nav class="navbar navbar-expand-sm "
-                style="background-color: RGB(181,41,133)">
-                <div class="container-fluid">
-
-                    <a class="navbar-brand text-white" href="/">Agencia MKT+</a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-
-                        <ul class="navbar-nav">
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white"
-                                    aria-current="page" href="/">Principal</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/convert">Conversor</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/togglePassword">Alterar Senha</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+  <title>Conversor de VSL</title>
 
 
-        </header>
+  <link href="../static/assets/img/favicon.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        <main class="main 
-            d-md-flex d-lg-flex
-            flex-md-row flex-lg-row
-            mt-5 mt-sm-5 mt-md-0"
-        >
-            <div class="row ">
-                <div class="d-flex flex-column
-                    col-xs-12 col-sm-12 col-md-6
-                    align-content-sm-center align-content-xs-center align-content-md-start align-content-lg-start
-                    align-items-center align-items-sm-center
-                    align-items-md-start
-                    justify-content-center
-                    px-5
-                    mt-n5 mt-sm-n5 mt-md-n5 mt-lg-0"
-                >
-                    <h1 class="fw-bolder">CONVERSOR DE VSL</h1>
-                    <h6 class="fw-normal text-center text-sm-cnter text-md-start mt-4">Utilize nosso
-                        conversor automático e otimize seu tempo na criação da
-                        sua VSL, de forma rápida e segura.</h6>
-                    <h6 class="fw-normal h6">Assista o vídeo para saber como funciona.</h6>
-                    <button
-                        onclick="window.location.href= '/convert'"
-                        class="btn btn-lg text-white fw-bolder mt-2 px-4 py-3"
-                        style="background-color: rgb(255,93,94)">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 
-                        <h6 class="m-0 p-0">IR PARA O CONVERSOR</h6>
-                    </button>
-                </div>
-                <div
-                    style="height: 300px;" 
-                    class="d-flex col-xs-12 col-sm-12 col-md-6
-                    mt-2 mt-sm-2 mt-md-0 mt-lg-0
-                    mb-5 mb-sm-5 mb-md-0 mb-lg-0
-                    justify-content-center">
-                    <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/_YeN69XoqqU"
-                        title="Tutorial"
-                        frameborder="2"
-                        allow="accelerometer; picture-in-picture"
-                        allowfullscreen
-                        class="
-                        px-5 px-sm-5 px-md-0 px-ld-0"
-                    >
-                    </iframe>
-                </div>
-            </div>
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/css/mainPrincipal.css" rel="stylesheet">
 
-        </main>
+</head>
 
-        <footer class="position-absolute bottom-0 start-0 ps-5">
-            <p>&copy;2022 - Agência MKT+</p>
-        </footer>
+<body>
+  <header id="header" class="header bgColor-defaul d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-    </body>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- <img src="../static/assets/img/logo.png" alt=""> -->
+        <h1>Conversor</h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/" class="active">Principal</a></li>
+          <li><a href="/convert">Conversor</a></li>
+
+          <li class="dropdown"><a href="#"><span>Usuário</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="togglePassword.html">Pagina do Usuário(Em Breve)</a></li>
+              <li><a href="/togglePassword">Trocar senha</a></li>
+              <li><a href="#">Trocar E-mail (Em Breve)</a></li>
+            </ul>
+          </li>
+          <li><a class="get-a-quote" href="/">Seja um assinante</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
+
+          <div class="col-lg-6 position-relative align-self-start order-last ">
+            <img src="../static/assets/img/about.jpg" class="img-fluid rounded" alt="">
+            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+          </div>
+
+          <div class="col-lg-6 content order-first  d-flex flex-column justify-content-center align-items-center align-items-sm-center align-items-md-center align-items-lg-start">
+
+            <h1 class=" text-center text-sm-center text-md-center text-lg-start">CONVERSOR DE VSL</h1>
+            <p class="text-center text-sm-center text-md-center text-lg-start">
+              Utilize nosso conversor automático e otimize seu
+              tempo na criação da
+              sua VSL, de forma rápida e segura.</p>
+            <h6 class="fw-normal h6 text-center text-sm-center text-md-center text-lg-start">
+              Assista o vídeo para saber como funciona.
+            </h6>
+
+            <button onclick="window.location.href= '/convert'" class="
+              btn 
+              btn 
+              text-white 
+              fw-bolder 
+              mt-2 px-2 py-3 w-75
+              
+            "
+            style="background-color: rgb(255,93,94)">
+
+              <h6 class="m-0 p-0 text-white ">IR PARA O CONVERSOR</h6>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer id="footer" class="footer fixed-bottom">
+    <div class="container">
+
+      <div class="copyright">
+        &copy;Copyright <strong><span>AgenciaMKT+</span></strong>. All Rights Reserved
+      </div>
+
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">@aelafar</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+</body>
+
 </html>
-
-<style>
-    body{
-        overflow: hidden;   
-    }
-    main{
-        padding-bottom: 80px !important;
-        width: 100vw;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;    
-    }   
-</style>

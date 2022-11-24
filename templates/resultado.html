@@ -5,117 +5,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>Criador de VSL</title>
+
+    <title>Conversor de VSL</title>
+
+
+    <link href="../static/assets/img/favicon.png" rel="icon">
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../static/assets/css/mainPrincipal.css" rel="stylesheet">
+
 </head>
 
 <body>
+    <header id="header" class="header bgColor-defaul d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-    <header>
-        <nav class="navbar navbar-expand-sm " style="background-color: RGB(181,41,133)">
-            <div class="container-fluid">
+            <a href="/" class="logo d-flex align-items-center">
+                <!-- <img src="../static/assets/img/logo.png" alt=""> -->
+                <h1>Conversor</h1>
+            </a>
 
-                <a class="navbar-brand text-white" href="/">Agencia MKT+</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="/" class="active">Principal</a></li>
+                    <li><a href="/convert">Conversor</a></li>
 
-                    <ul class="navbar-nav">
+                    <li class="dropdown"><a href="#"><span>Usuário</span> <i
+                                class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="togglePassword.html">Pagina do Usuário(Em Breve)</a></li>
+                            <li><a href="/togglePassword">Trocar senha</a></li>
+                            <li><a href="#">Trocar E-mail (Em Breve)</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="get-a-quote" href="/">Seja um assinante</a></li>
+                </ul>
+            </nav>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="/">Principal</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="/convert">Conversor</a>
-                        </li>
-
-
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="/togglePassword">Alterar Senha</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="main mt-5 mt-sm-5 mt-md-5">
-        <div class="row
-                d-flex
-                flex-column
-                justify-content-center align-content-center
+    <main id="main">
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gy-4">
 
-                ">
-            <h1 class="text-center ">Clique aqui para começar o download</h1>
+                    <div id="body" class="row d-flex flex-column align-items-center">
+                        <h1 id="inv" class="text-center">
+                            Clique aqui para ver a sua VSL
+                        </h1>
 
-            {% if dir %}
-                <!-- Esse trecho tem como objetivo receber o diretório enviado pelo back e atraves do js disponibilizar para download  -->
-                <h1 hidden id="dir">{{dir}}</h1>
-            {% endif %}
+                        <a id="ancora" href="" onclick="delet()" download class="btn bt-lj mt-3">
+                           <p class="fwButton mb-0 ">DOWNLOAD</p> 
+                        </a>
+                    </div>
 
-            <a id="ancora" href="" onclick="window.location.href='http://localhost:5000/del'" download class="d-flex justify-content-center fs-1">
+                    <div id="load" class="spinner hidden inv">
+                        <div class="circle"></div>
+                    </div>
 
+                </div>
+            </div>
+        </section>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                    class="col-1 bi-download animate" viewBox="0 0 16 16">
-                    <path
-                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                    <path
-                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-                </svg>
-
-                <h2 class="col-3 p-0 mb-0 mt-2"> VSL.pptx </h2>
-            </a>
-        </div>
 
     </main>
 
-    <footer class="position-absolute bottom-0 start-0 ps-5">
-        <p>&copy;2022 - Agência MKT+</p>
+    <footer id="footer" class="footer fixed-bottom">
+        <div class="container">
+
+            <div class="copyright">
+                &copy;Copyright <strong><span>AgenciaMKT+</span></strong>. All Rights Reserved
+            </div>
+
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">@aelafar</a>
+            </div>
+
+        </div>
     </footer>
 
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/assets/vendor/aos/aos.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../static/assets/js/main.js"></script>   
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
-
-<script>
-    dir = document.getElementById("dir").innerText
-    const a = document.getElementById("ancora")
-    a.href = dir
-</script>
-
 </html>
-
-<style>
-    body {
-        overflow: hidden;
-    }
-    main {
-        padding-bottom: 80px !important;
-        width: 100vw;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-    .animate {
-        animation: img 0.5s ease alternate infinite;
-        text-decoration: none;
-    }
-    @keyframes img {
-        to {
-            transform:
-                translateY(5px)
-        }
-    }
-</style>

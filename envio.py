@@ -19,7 +19,7 @@ def send_email(emails, content, subject):
         msg['Subject'] = subject
         msg['From'] = 'agenciamktm@gmail.com'
         msg['To'] = emails
-        password = 'yakmqvvoplamgsmg' 
+        password = 'vqslnaabrctovbbm' 
         msg.add_header('Content-Type', 'text/html')
         msg.set_payload(corpo_email )
 
@@ -30,7 +30,8 @@ def send_email(emails, content, subject):
         s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
         print('Email enviado')
     except Exception as e:
-        print(e)
+        print(f"Erro ao enviat email: {e}") 
+
 
 def send_email_with_anexo(email, content, subject, dir):
     try:
@@ -39,7 +40,7 @@ def send_email_with_anexo(email, content, subject, dir):
 
         recipient = email
         username = "agenciamktm@gmail.com"
-        password = 'yakmqvvoplamgsmg'
+        password = 'vqslnaabrctovbbm'
 
         message = MIMEMultipart()
         message["From"] = username
@@ -59,4 +60,4 @@ def send_email_with_anexo(email, content, subject, dir):
         server.sendmail(username, recipient, message.as_string().encode('utf-8'))
         server.quit()
     except Exception as e:
-        print(e) 
+        print(f"Erro ao enviat email: {e}") 

@@ -3,7 +3,6 @@ from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from waitress import serve
-from werkzeug.security import check_password_hash
 from flask_pymongo import PyMongo
 import shutil
 import envio
@@ -150,7 +149,7 @@ def togglePassword():
           mongo.db.user.find_one_and_update({'_id': user["_id"]}, {"$set": {'password': newPassword}})
           return render_template("login.html", msg= 'Senha alterada com sucesso')
         else:
-          return render_template("togglePassword.html", msgFalse= 'As senhas não são iguais, por favor verificar')
+          return render_template("togglePassword.html", msgFalse= 'As senhas não são) iguais, por favor verificar')
         if user.password == passs:
           return "Mesma senha, comfirmada"
         else:

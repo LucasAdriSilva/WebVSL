@@ -1,274 +1,248 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS only -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-            crossorigin="anonymous">
-        <title>Criador de VSL</title>
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-sm " style="background-color:
-                RGB(181,41,133)">
-                <div class="container-fluid">
-                    <a class="navbar-brand text-white" href="/">Agencia MKT+</a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
 
-                    <div class="collapse navbar-collapse" id="navbarNav">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                        <ul class="navbar-nav">
+  <title>Conversor de VSL</title>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white"
-                                    aria-current="page" href="/">Principal</a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/convert">Conversor</a>
-                            </li>
+  <link href="../static/assets/img/favicon.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/togglePassword">Alterar Senha</a>
-                            </li>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/css/mainPrincipal.css" rel="stylesheet">
 
-        <main class="main
-            d-md-flex d-lg-flex
-            flex-md-row flex-lg-row
-            mt-5 mt-sm-5 mt-md-0">
-            <div class="row">
+</head>
 
-                <div class="col-12 d-flex flex-column justify-items-center
-                    align-items-center
-                    px-5 px-sm-5 px-md-5 px-lg-0">
-                    <h1 class="fw-bolder text-center">CONVERSOR DE VSL</h1>
-                    <h6 class="fw-normal text-center">Cole sua copy no espaço
-                        abaixo para gerar slides de Power Point para sua VSL.</h6>
-                    <h6 class="fw-normal text-center">Configuração padrão: fonte
-                        Arial, tamanho 40.</h6>
-                </div>
+<body>
+  <header id="header" class="header bgColor-defaul d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-                <!-- Text area apenas para Celular -->
-                <div class="col-12 mt-3
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- <img src="../static/assets/img/logo.png" alt=""> -->
+        <h1>Conversor</h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/" class="active">Principal</a></li>
+          <li><a href="/convert">Conversor</a></li>
+
+          <li class="dropdown"><a href="#"><span>Usuário</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="togglePassword.html">Pagina do Usuário(Em Breve)</a></li>
+              <li><a href="/togglePassword">Trocar senha</a></li>
+              <li><a href="#">Trocar E-mail (Em Breve)</a></li>
+            </ul>
+          </li>
+          <li><a class="get-a-quote" href="/">Seja um assinante</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row ">
+
+          <div class="col-12 d-flex flex-column justify-items-center align-items-center">
+
+            <h1 class="fw-bolder text-center">CONVERSOR DE VSL</h1>
+
+            <p class="fw-normal text-center mb-0">
+              Cole sua copy no espaço abaixo para gerar slides de Power Point para sua VSL.
+            </p>
+
+            <p class="fw-normal fwBolde text-center mb-0 mt-4">
+              Configuração padrão: fonte Arial, tamanho 40.
+            </p>
+
+          </div>
+
+          <!-- Text area apenas para Celular -->
+          <div class="col-12 mt-3
                     d-flex d-sm-none d-md-none d-lg-none
                     justify-content-center
                     ">
-                    <form action="/autenticar">
-                        <div class="row d-flex justify-content-center">
+            <form action="/autenticar">
+              <div class="row d-flex justify-content-center">
 
 
-                            <div id="divCheck" class="d-flex justify-content-center ">
-                                <input type="checkbox" id="check1">
-                                <p class="p-0 m-0 ms-1">Enviar por e-mail</p>
-                            </div>
+                <div id="divCheck" class="d-flex justify-content-center ">
+                  <input type="checkbox" id="check1">
+                  <p class="p-0 m-0 ms-1">Enviar por e-mail</p>
+                </div>
 
-                            <div id="checkEmail" class="col-12 ocult  flex-column
+                <div id="checkEmail" class="col-12 ocult  flex-column
                                 justify-content-center align-content-center mb-3
                                 mx-5">
-                                <p class="text-center m-0 p-0">Digite os emails
-                                    da sua equipe separado por virgula: </p>
-                                <input type="text" name="email" id="check1"
-                                    class="marginMobile">
-                            </div>
+                  <p class="text-center m-0 p-0">Digite os emails
+                    da sua equipe separado por virgula: </p>
+                  <input type="text" name="email" id="check1" class="marginMobile">
+                </div>
 
-                            <div class="col-12 d-flex justify-content-center">
-                                <textarea
-                                    type="text"
-                                    style="
+                <div class="col-12 d-flex justify-content-center">
+                  <textarea type="text" style="
                                     resize: none;
                                     background-color: #ebebeb;
                                     border: none
-                                    "
-                                    name="vsl"
-                                    id="text"
-                                    cols="40"
-                                    rows="10"></textarea>
+                                    " name="vsl" id="text" cols="40" rows="10"></textarea>
 
-                            </div>
-
-                            <div class="col-2 d-flex flex-column
-                                align-items-center justify-content-center mt-3
-                                ">
-                                <button
-                                    type="submit"
-                                    class="btn btn-lg text-white text-center
-                                    fw-bolder"
-                                    style="
-                                    background-color: rgb(255,93,94);
-                                    ">
-                                    CONVERTER!
-                                </button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
 
-                <!-- Text area apenas para  Tablet -->
-                <div class="col-12 mt-3
+                <div class="col-2 d-flex flex-column
+                                align-items-center justify-content-center mt-3
+                                ">
+                  <button type="submit" class="btn btn-lg text-white text-center
+                                    fw-bolder" style="
+                                    background-color: rgb(255,93,94);
+                                    ">
+                    CONVERTER!
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Text area apenas para  Tablet -->
+          <div class="col-12 mt-3
                     d-sm-flex
                     d-none d-md-none d-lg-none
                     justify-content-sm-center
                     ">
-                    <form action="/autenticar">
-                        <div class="row d-flex justify-content-center">
+            <form action="/autenticar">
+              <div class="row d-flex justify-content-center">
 
-                            <div id="divCheck2" class="d-flex justify-content-center ">
-                                <input type="checkbox" id="check2">
-                                <p class="p-0 m-0 ms-1">Enviar por e-mail</p>
-                            </div>
+                <div id="divCheck2" class="d-flex justify-content-center ">
+                  <input type="checkbox" id="check2">
+                  <p class="p-0 m-0 ms-1">Enviar por e-mail</p>
+                </div>
 
-                            <div id="checkEmail2" class="col-12 ocult flex-column
+                <div id="checkEmail2" class="col-12 ocult flex-column
                                 align-content-center justify-content-center mb-3
                                 mx-5">
-                                <p class="text-center m-0 p-0">Digite os emails
-                                    da sua equipe separado por virgula: </p>
-                                <input type="text" name="email" id="text"
-                                    class="marginTablet">
-                            </div>
+                  <p class="text-center m-0 p-0">Digite os emails
+                    da sua equipe separado por virgula: </p>
+                  <input type="text" name="email" id="text" class="marginTablet">
+                </div>
 
-                            <div class="col-12 d-flex justify-content-center">
-                                <textarea
-                                    type="text"
-                                    style="
+                <div class="col-12 d-flex justify-content-center">
+                  <textarea type="text" style="
                                     resize: none;
                                     background-color: #ebebeb;
                                     border: none
-                                    "
-                                    name="vsl"
-                                    id="text"
-                                    cols="80"
-                                    rows="10"></textarea>
+                                    " name="vsl" id="text" cols="80" rows="10"></textarea>
 
-                            </div>
-
-                            <div class="col-2 d-flex flex-column
-                                align-items-center justify-content-center mt-3
-                                ">
-                                <button
-                                    type="submit"
-                                    class="btn btn-lg text-white text-center
-                                    fw-bolder"
-                                    style="
-                                    background-color: rgb(255,93,94);
-                                    ">
-                                    CONVERTER!
-                                </button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
 
-                <!-- Text area apenas para PC -->
-                <div class="col-12 mt-3
+                <div class="col-2 d-flex flex-column
+                                align-items-center justify-content-center mt-3
+                                ">
+                  <button type="submit" class="btn btn-lg text-white text-center
+                                    fw-bolder" style="
+                                    background-color: rgb(255,93,94);
+                                    ">
+                    CONVERTER!
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Text area apenas para PC -->
+          <div class="col-12 mt-3
                     d-none d-sm-none
                     d-md-flex d-lg-flex
                     justify-content-md-center justify-content-lg-center
                     ">
-                    <form action="/autenticar">
-                        <div class="row d-flex justify-content-center">
+            <form action="/autenticar">
+              <div class="row d-flex justify-content-center">
 
-                            <div id="divCheck3" class="d-flex justify-content-center ">
-                                <input type="checkbox" id="check3">
-                                <p class="p-0 m-0 ms-1">Enviar por e-mail</p>
-                            </div>
-
-                            <div id="checkEmail3" class="col-12 ocult flex-column
-                                align-content-center justify-content-center mb-3 mx-5
-                                ">
-                                <p class="text-center m-0 p-0">Digite os emails
-                                    da sua equipe separado por virgula: </p>
-                                <input type="text" name="email" id="text"
-                                    class="mx-auto" style="width: 400px">
-                            </div>
-
-                            <div class="col-12 d-flex justify-content-center">
-                                <textarea
-                                    type="text"
-                                    style="margin-left: 50px; resize: none;
-                                    background-color: #ebebeb; border: none"
-                                    name="vsl"
-                                    id="text"
-                                    cols="120"
-                                    rows="15"></textarea>
-                            </div>
-                            <div class="col-2 d-flex flex-column
-                                justify-content-center mt-3">
-                                <button
-                                    type="submit"
-                                    class="btn btn-lg text-white fw-bolder"
-                                    style="background-color: rgb(255,93,94)">
-                                    CONVERTER!
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                <div id="divCheck3" class="d-flex justify-content-center ">
+                  <input type="checkbox" id="check3">
+                  <p class="p-0 m-0 ms-1">Enviar por e-mail</p>
                 </div>
 
+                <div id="checkEmail3" class="col-12 ocult flex-column
+                                align-content-center justify-content-center mb-3 mx-5
+                                ">
+                  <p class="text-center m-0 p-0">Digite os emails
+                    da sua equipe separado por virgula: </p>
+                  <input type="text" name="email" id="text" class="mx-auto" style="width: 400px">
+                </div>
 
-            </div>
-        </main>
+                <div class="col-12 d-flex justify-content-center">
+                  <textarea type="text" style="margin-left: 50px; resize: none;
+                                    background-color: #ebebeb; border: none" name="vsl" id="text" cols="120"
+                    rows="15"></textarea>
+                </div>
+                <div class="col-2 d-flex flex-column
+                                justify-content-center mt-3">
+                  <button type="submit" class="btn btn-lg text-white fw-bolder"
+                    style="background-color: rgb(255,93,94)">
+                    CONVERTER!
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
 
-        <footer class="position-absolute bottom-0 start-0 ps-5">
-            <p>&copy;2022 - Agência MKT+</p>
-        </footer>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    </body>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-</html>
+  <footer id="footer" class="footer fixed-bottom">
+    <div class="container">
 
-<style>
-        body{
-            overflow: hidden;   
-        }
-        main{
-            padding-bottom: 200px !important;
-            width: 100vw;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;    
-        }
-        .marginMobile{
-            margin-left: 900px !important;    
-            margin-right: 900px !important;    
-        }
-        .marginTablet{
-            margin-left: 700px !important;    
-            margin-right: 700px !important;    
-        } 
-        .marginPC{
-            margin-left: 2000px !important;    
-            margin-right: 2000px !important;    
-        }     
-        .ocult{
-            display:none
-        }
-</style>
+      <div class="copyright">
+        &copy;Copyright <strong><span>AgenciaMKT+</span></strong>. All Rights Reserved
+      </div>
 
-<script>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">@aelafar</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+  <script>
     document.getElementById('check1').addEventListener('click', showDiv)
     document.getElementById('check2').addEventListener('click', showDiv2)
     document.getElementById('check3').addEventListener('click', showDiv3)
@@ -295,3 +269,6 @@
         document.getElementById('checkEmail3').classList.add('d-flex')
     }
 </script>
+</body>
+
+</html>
