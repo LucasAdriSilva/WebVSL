@@ -61,6 +61,10 @@
 
         </div>
     </header>
+        {% if dir %}
+        <!-- Esse trecho tem como objetivo receber o diretório enviado pelo back e atraves do js disponibilizar para download  -->
+        <h1 hidden id="dir">{{dir}}</h1>
+        {% endif %}
 
     <main id="main">
         <section id="about" class="about">

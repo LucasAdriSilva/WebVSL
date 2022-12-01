@@ -454,6 +454,10 @@ section {
 @media (max-width: 640px){
   body{
     font-size: 0.8rem;
+    margin-top: -25px;
+  }
+  .fs16px{
+    font-size: 0.8rem;
   }
   .fwButton{
     font-size: 16px;
@@ -735,7 +739,7 @@ section {
 
 
 
-/* Incrementado pelo Lucas */
+/* ***************************************************** Incrementado pelo Lucas ****************************************************** */
 
 .bgColor-defaul{
   background-color: RGB(181,41,133);
@@ -813,3 +817,41 @@ section {
   position: relative;
   top: 2px;
 }
+
+.btn-simple{
+  background-color: rgb(255,93,94); 
+  color: white;
+  transition: 0.5s;
+  font-size: 14px;
+  flex-wrap: none;
+}
+.btn-simple:hover{
+  background-color: white; 
+  color:  rgb(255,93,94);
+  border-color: rgb(255,93,94);
+  font-size: 16px;
+  transition: 0.5s;
+}
+.btn-outline {
+  border: 1px solid rgb(255,93,94);
+  font-size: 14px;
+  color: rgb(255,93,94);
+  transition: 1s;
+}
+.btn-outline:hover {
+  background-color: rgb(255,93,94); 
+  color:  white;
+  border-color: rgb(255,93,94);
+  font-size: 16px;
+  transition: 1s;
+}
+.minW110{
+  min-width: 110px;
+  max-width: 200px;
+}
+.minW150{
+  min-width: 150px;
+  max-width: 500px;
+  margin: auto;
+}
+

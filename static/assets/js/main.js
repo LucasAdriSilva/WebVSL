@@ -158,7 +158,6 @@ const a = document.getElementById("ancora")
 a.href = dir
 
 function delet() {
-  console.log("Entrou")
   document.getElementById('inv').classList.add('inv');
   document.getElementById('ancora').classList.add('inv');
   document.getElementById('load').classList.remove('inv');
@@ -196,3 +195,4 @@ function showDiv3(){
     document.getElementById('checkEmail3').classList.add('d-flex')
 }
 // --------------------------------
+
