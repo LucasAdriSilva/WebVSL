@@ -1,180 +1,173 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-            crossorigin="anonymous">
 
-        <title>Criador de VSL</title>
-    </head>
-    <body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <header>
-            <nav class="navbar navbar-expand-sm "
-                style="background-color: RGB(181,41,133)">
-                <div class="container-fluid">
+  <title>Conversor de VSL</title>
 
-                    <a class="navbar-brand text-white" href="/">Agencia MKT+</a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
 
-                    <div class="collapse navbar-collapse" id="navbarNav">
+  <link href="../static/assets/img/favicon.png" rel="icon">
 
-                        <ul class="navbar-nav">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white"
-                                    aria-current="page" href="/">Principal</a>
-                            </li>
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/css/mainPrincipal.css" rel="stylesheet">
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/convert">Conversor</a>
-                            </li>
+</head>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/togglePassword">Alterar Senha</a>
-                            </li>
+<body>
+  <header id="header" class="header bgColor-defaul d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-                        </ul>
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- <img src="../static/assets/img/logo.png" alt=""> -->
+        <h1>Conversor</h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/" class="active">Principal</a></li>
+          <li><a href="/convert">Conversor</a></li>
+
+          <li class="dropdown"><a href="#"><span>Usuário</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="togglePassword.html">Pagina do Usuário(Em Breve)</a></li>
+              <li><a href="/togglePassword">Trocar senha</a></li>
+              <li><a href="#">Trocar E-mail (Em Breve)</a></li>
+            </ul>
+          </li>
+          <li><a class="get-a-quote" href="/">Seja um assinante</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row m-3 d-flex flex-column align-items-center">
+
+            <div class="col-12 ">
+                {% if msgTrue %}
+                    <div id="msg_valided" class="alert alert-success text-center" role="alert">
+                        {{msgTrue}}
                     </div>
-                </div>
-            </nav>
-        </header>
-
-        <main class="main
-            d-md-flex d-lg-flex
-            flex-md-row flex-lg-row
-            mt-5 mt-sm-5 mt-md-0">
-            <div class="row m-3 d-flex flex-column align-items-center">
-                <div class="col-12 ">
-                    {% if msgTrue %}
-                        <div id="msg_valided" class="alert alert-success" role="alert">
-                            {{msgTrue}}
-                        </div>
-                    {% endif %}
-                    {% if msgFalse %}
-                        <div id="msg_valided" class="alert alert-danger" role="alert">
-                            {{msgFalse}}
-                        </div>
-                    {% endif %}
+                {% endif %}
+                {% if msgFalse %}
+                    <div id="msg_valided" class="alert alert-danger text-center" role="alert">
+                        {{msgFalse}}
+                    </div>
+                {% endif %}
 
 
-                    <h1 class="text-center">Recuperação de senha</h1>
-                </div>
-
-                <div class="col-8 text-center">
-                    <form action="/reset" method="POST" class="needs-validation" novalidate>
-
-                        <!-- {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                        {% for message in messages %}
-                        <div id="msg_valided" class="alert alert-danger" role="alert">
-                            {{ message }}
-                        </div>
-                        {% endfor %}
-                        {% endif %}
-                        {% endwith %} -->
-
-                        <input 
-                            type="text" 
-                            name=login 
-                            id="login"
-                            class="form-control mb-1 text-center" 
-                            placeholder="Digite seu nome de usuário" 
-                            required
-                            autofocus
-                        >
-                        <div class="invalid-feedback text-start">
-                            Digite o login para fazer a recupeção de senha.
-                        </div>
-                        
-                        <button
-                            class="w-75 btn btn-outline orange mt-2"
-                            type="submit"
-                        >
-                            Enviar
-                        </button>
-                        
-
-                    </form>
-                </div>
-
+                <h1 class="text-center">Recuperação de senha</h1>
             </div>
 
-        </main>
+            <div class="col-12 text-center">
+                <form action="/reset" method="POST" class="needs-validation" novalidate>
+                    <input 
+                        type="text" 
+                        name=login 
+                        id="login"
+                        class="form-control mb-1 text-center minW150 fs16px" 
+                        placeholder="Digite seu nome de usuário" 
+                        required
+                        autofocus
+                    >
+                    <div class="invalid-feedback text-start">
+                        Digite o login para fazer a recupeção de senha.
+                    </div>
+                    
+                    <button
+                        class="w-75 btn btn-outline orange mt-2 minW80"
+                        type="submit"
+                    >
+                        Enviar
+                    </button>
+                    
 
-        <footer class="position-absolute bottom-0 start-0 ps-5">
-            <p>&copy;2022 - Agência MKT+</p>
-        </footer>
-    </body>
+                </form>
+            </div>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous">
-    </script>
-    <script>
-        // VALIDAÇÂO FORM
-        (function() {
-              'use strict';
-              window.addEventListener('load', function() {
-                // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
-                var forms = document.getElementsByClassName('needs-validation');
-                // Faz um loop neles e evita o envio
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                  form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                      event.preventDefault();
-                      event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                  }, false);
-                });
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer fixed-bottom">
+    <div class="container">
+
+      <div class="copyright">
+        &copy;Copyright <strong><span>AgenciaMKT+</span></strong>. All Rights Reserved
+      </div>
+
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">@aelafar</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+
+  <script>
+    // VALIDAÇÂO FORM
+    (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
+            var forms = document.getElementsByClassName('needs-validation');
+            // Faz um loop neles e evita o envio
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
               }, false);
-            })();
+            });
+          }, false);
+        })();
 
 
-        //TEMPO DE MSG
-        setTimeout(function () {
-        document.getElementById("msg_valided").style.display = "none";
-        }, 3000);
-    </script>
+    //TEMPO DE MSG
+    setTimeout(function () {
+    document.getElementById("msg_valided").style.display = "none";
+    }, 3000);
+</script>
+</body>
+
 </html>
-
-<style>
-    body{
-        overflow: hidden;   
-    }
-    main{
-        padding-bottom: 80px !important;
-        width: 100vw;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;    
-    }  
-    .btn-simple{
-        background-color: rgb(255,93,94); 
-        color: white;
-    }
-    .btn-outline {
-    border: 1px solid black;
-    font-size: 16px;
-    }
-    .orange {
-    border-color: rgb(255,93,94);
-    color: rgb(255,93,94);
-    }
-</style>

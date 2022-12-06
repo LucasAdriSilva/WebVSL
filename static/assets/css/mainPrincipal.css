@@ -771,12 +771,12 @@ section {
 }
 
 .circle {
-  width: 1em;
-  height: 1em;
+  width: 0.9em;
+  height: 0.9em;
   background-color: RGB(181, 41, 133);
   border-radius: 50%;
-  margin-left: 6.9em;
-  margin-top: 0.5em;
+  margin-left: 7.8em;
+  margin-top: 0.4em;
 
 }
 
@@ -854,4 +854,28 @@ section {
   max-width: 500px;
   margin: auto;
 }
+.minW80{
+  min-width: 80px;
+  max-width: 250px;
+  margin: auto;
+}
+.input{
+  min-width: 100px;
+  max-width: 350px;
+  margin: auto;
+}
+.minW80max400{
+  max-width: 600px;
+  margin: auto;
+}
+.btn_resp{
+  min-width: 100px;
+  max-width: 180px;
+}
 
+@media (max-width: 350px){
+  .minW80max400{
+    width: 200px !important;
+    margin: auto;
+  }
+}
